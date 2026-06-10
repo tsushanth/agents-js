@@ -11,7 +11,6 @@ import {
   llm,
   voice,
 } from '@livekit/agents';
-import * as livekit from '@livekit/agents-plugin-livekit';
 import { fileURLToPath } from 'node:url';
 import { z } from 'zod';
 
@@ -84,7 +83,6 @@ export default defineAgent({
       // to use realtime model, replace the stt, llm, tts and vad with the following
       // llm: new openai.realtime.RealtimeModel(),
       userData: userdata,
-      turnDetection: new livekit.turnDetector.EnglishModel(),
     });
 
     await session.start({
